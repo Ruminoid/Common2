@@ -25,7 +25,7 @@ namespace Ruminoid.Common2.Utils.UserTypes
         public static implicit operator RateValue(Rate rate) =>
             rate.Value;
 
-        public static implicit operator Rate(int value) =>
+        public static implicit operator Rate([ValueRange(0, 5)] int value) =>
             (RateValue) value;
 
         public static implicit operator int(Rate rate) =>
