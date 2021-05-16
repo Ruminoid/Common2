@@ -16,8 +16,13 @@ namespace Ruminoid.Common2.Test.Utils.Text
 
                 "aafangshi",
                 "aafangs",
+                "aafang式",
                 "aafshi",
-                "aafs"
+                "aafs",
+                "aaf式",
+                "aa方shi",
+                "aa方s",
+                "aa方式"
 
                 // ReSharper restore StringLiteralTypo
             };
@@ -39,10 +44,12 @@ namespace Ruminoid.Common2.Test.Utils.Text
             Assert.True(SearchUtils.Search(new[] { "AA方式" }, "aafsh").Any());
             Assert.True(SearchUtils.Search(new[] { "AA方式" }, "afsh").Any());
             Assert.True(SearchUtils.Search(new[] { "AA方式" }, "fsh").Any());
-            Assert.True(SearchUtils.Search(new[] { "AA方式" }, "fangsh").Any());
+            Assert.True(SearchUtils.Search(new[] { "AA方式" }, "方sh").Any());
+            Assert.True(SearchUtils.Search(new[] { "AA方式" }, "A方式").Any());
             Assert.False(SearchUtils.Search(new[] { "AA方式" }, "bb").Any());
             Assert.False(SearchUtils.Search(new[] { "AA方式" }, "aafangg").Any());
             Assert.False(SearchUtils.Search(new[] { "AA方式" }, "aafngshi").Any());
+            Assert.False(SearchUtils.Search(new[] { "AA方式" }, "啊").Any());
 
             // ReSharper restore StringLiteralTypo
         }

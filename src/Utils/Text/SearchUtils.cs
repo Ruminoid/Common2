@@ -25,12 +25,14 @@ namespace Ruminoid.Common2.Utils.Text
                             .Where(x => !string.IsNullOrWhiteSpace(x))
                             .Select(x => Regex.Replace(x, @"\d", "").ToLower())
                             .Distinct()
-                            .ToList();
+                            .ToList(); // 全拼
 
                     strList.AddRange(
                         strList
-                            .Select(x => x[..1])
+                            .Select(x => x[..1]) // 首字母
                             .ToArray());
+
+                    strList.Add(c.ToString()); // 原字符
 
                     textList.Add(strList);
                 }
