@@ -10,7 +10,7 @@ namespace Ruminoid.Common2.Test.Utils.Text
         [Fact]
         public static void GetTextForSearchTextTest()
         {
-            List<string> expected = new List<string>
+            List<string> expected = new()
             {
                 // ReSharper disable StringLiteralTypo
 
@@ -37,6 +37,9 @@ namespace Ruminoid.Common2.Test.Utils.Text
             Assert.True(SearchUtils.Search(new[] { "AA方式" }, "aafangs").Any());
             Assert.True(SearchUtils.Search(new[] { "AA方式" }, "aafangsh").Any());
             Assert.True(SearchUtils.Search(new[] { "AA方式" }, "aafsh").Any());
+            Assert.True(SearchUtils.Search(new[] { "AA方式" }, "afsh").Any());
+            Assert.True(SearchUtils.Search(new[] { "AA方式" }, "fsh").Any());
+            Assert.True(SearchUtils.Search(new[] { "AA方式" }, "fangsh").Any());
             Assert.False(SearchUtils.Search(new[] { "AA方式" }, "bb").Any());
             Assert.False(SearchUtils.Search(new[] { "AA方式" }, "aafangg").Any());
             Assert.False(SearchUtils.Search(new[] { "AA方式" }, "aafngshi").Any());

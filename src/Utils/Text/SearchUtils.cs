@@ -63,7 +63,7 @@ namespace Ruminoid.Common2.Utils.Text
 
             return items
                 .Where(x => GetTextForSearch(text(x))
-                    .Any(y => y.StartsWith(searchText)))
+                    .Any(y => y.Contains(searchText)))
                 .ToList();
         }
     }
