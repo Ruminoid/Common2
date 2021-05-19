@@ -29,6 +29,7 @@
     <PackageReference Include="CHSPinYinConv" Version="1.0.0" />
     <PackageReference Include="JetBrains.Annotations" Version="2021.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="SearchSharp" Version="1.0.1" />
     <PackageReference Include="System.Reactive.Linq" Version="5.0.0" />
   </ItemGroup>
 
